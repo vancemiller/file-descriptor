@@ -10,7 +10,7 @@ FileDescriptor::FileDescriptor(FileDescriptor&& o) noexcept : fd(o.fd) { o.fd = 
 FileDescriptor::~FileDescriptor(void) noexcept {
   if (fd == -1) return;
   if (close(fd) == -1) std::cerr << "WARNING: file close failed" << std::endl;
-};
+}
 int FileDescriptor::get(void) const noexcept { return fd; }
 bool FileDescriptor::operator==(int fd) const noexcept { return this->fd == fd; }
 bool FileDescriptor::operator!=(int fd) const noexcept { return this->fd != fd; }
