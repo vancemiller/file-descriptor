@@ -12,6 +12,12 @@ TEST(FileDescriptor, OpenClose) {
   EXPECT_EQ(0, remove("./.test.tmp"));
 }
 
+TEST(FileDescriptor, OperatorEq) {
+  FileDescriptor f(open("./.test.tmp", O_CREAT));
+  EXPECT_TRUE(f != -1);
+  EXPECT_EQ(0, remove("./.test.tmp"));
+}
+
 // TODO more tests
 
 } // namespace wrapper

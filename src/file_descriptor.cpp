@@ -12,5 +12,8 @@ FileDescriptor::~FileDescriptor(void) noexcept {
   if (close(fd) == -1) std::cerr << "WARNING: file close failed" << std::endl;
 };
 int FileDescriptor::get(void) const noexcept { return fd; }
+bool FileDescriptor::operator==(int fd) const noexcept { return this->fd == fd; }
+bool FileDescriptor::operator!=(int fd) const noexcept { return this->fd != fd; }
+
 } // namespace wrapper
 

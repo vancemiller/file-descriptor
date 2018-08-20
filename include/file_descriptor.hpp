@@ -15,6 +15,8 @@ class FileDescriptor {
     FileDescriptor(FileDescriptor&& o) noexcept;
     ~FileDescriptor(void) noexcept;
     int get(void) const noexcept;
+    bool operator==(int fd) const noexcept;
+    bool operator!=(int fd) const noexcept;
 };
 } // namespace wrapper
 
