@@ -13,6 +13,7 @@ class FileDescriptor {
     FileDescriptor(FileDescriptor& o) = delete;
     FileDescriptor(const FileDescriptor& o) = delete;
     FileDescriptor(FileDescriptor&& o) noexcept;
+    FileDescriptor &operator=(FileDescriptor &&o) noexcept;
     ~FileDescriptor(void) noexcept;
     int get(void) const noexcept;
     bool operator==(int fd) const noexcept;
